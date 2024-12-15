@@ -8,38 +8,38 @@ conn = sqlite3.connect('db/AUTO.db', check_same_thread=False)
 cursor = conn.cursor()
 
 
-def db_table_val_car(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int):
-    cursor.execute('INSERT INTO CAR (marka, model, year, power, liter, transmission, drive, color, country, price) VALUES (?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price,))
+def db_table_val_car(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int, link: str):
+    cursor.execute('INSERT INTO CAR (marka, model, year, power, liter, transmission, drive, color, country, price, link) VALUES (?,?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price, link,))
     conn.commit()
 
 
-def db_table_val_bmw(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int):
-    cursor.execute('INSERT INTO BMW (marka, model, year, power, liter, transmission, drive, color, country, price) VALUES (?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price,))
+def db_table_val_bmw(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int, link: str):
+    cursor.execute('INSERT INTO BMW (marka, model, year, power, liter, transmission, drive, color, country, price, link) VALUES (?,?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price, link,))
     conn.commit()
 
 
-def db_table_val_mercedes(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int):
-    cursor.execute('INSERT INTO MERCEDES (marka, model, year, power, liter, transmission, drive, color, country, price) VALUES (?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price,))
+def db_table_val_mercedes(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int, link: str):
+    cursor.execute('INSERT INTO MERCEDES (marka, model, year, power, liter, transmission, drive, color, country, price, link) VALUES (?,?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price, link,))
     conn.commit()
 
 
-def db_table_val_porsche(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int):
-    cursor.execute('INSERT INTO PORSCHE (marka, model, year, power, liter, transmission, drive, color, country, price) VALUES (?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price,))
+def db_table_val_porsche(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int, link: str):
+    cursor.execute('INSERT INTO PORSCHE (marka, model, year, power, liter, transmission, drive, color, country, price, link) VALUES (?,?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price, link,))
     conn.commit()
 
 
-def db_table_val_ford(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int):
-    cursor.execute('INSERT INTO FORD (marka, model, year, power, liter, transmission, drive, color, country, price) VALUES (?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price,))
+def db_table_val_ford(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int, link: str):
+    cursor.execute('INSERT INTO FORD (marka, model, year, power, liter, transmission, drive, color, country, price, link) VALUES (?,?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price, link,))
     conn.commit()
 
 
-def db_table_val_dodge(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int):
-    cursor.execute('INSERT INTO DODGE (marka, model, year, power, liter, transmission, drive, color, country, price) VALUES (?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price,))
+def db_table_val_dodge(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int, link: str):
+    cursor.execute('INSERT INTO DODGE (marka, model, year, power, liter, transmission, drive, color, country, price, link) VALUES (?,?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price, link,))
     conn.commit()
 
 
-def db_table_val_chevrolet(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int):
-    cursor.execute('INSERT INTO CHEVROLET (marka, model, year, power, liter, transmission, drive, color, country, price) VALUES (?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price,))
+def db_table_val_chevrolet(marka: str, model: str, year: int, power: int, liter: int, transmission: str, drive: str, color: str, country: str, price: int, link: str):
+    cursor.execute('INSERT INTO CHEVROLET (marka, model, year, power, liter, transmission, drive, color, country, price, link) VALUES (?,?,?,?,?,?,?,?,?,?,?)', (marka, model, year, power, liter, transmission, drive, color, country, price, link,))
     conn.commit()
 
 
@@ -65,7 +65,8 @@ def admin_add_car_text():
             "Привод\n"
             "Цвет\n"
             "Страна производства\n"
-            "Цена в рублях\n\n\n"
+            "Цена в рублях\n"
+            "Ссылка на фото\n\n"
             "пример:\n"
             "Ford\n"
             "Mustang GT 500\n"
@@ -76,7 +77,8 @@ def admin_add_car_text():
             "Задний\n"
             "Серый\n"
             "Америка\n"
-            "13000000")
+            "13000000\n"
+            "https://i.pinimg.com/736x/84/de/8416de3461896d837db1287859a69479.jpg\n")
     return text
 
 
@@ -104,54 +106,55 @@ def add_car(message):
         color_text = lines[7]
         country_text = lines[8]
         price_text = lines[9]
+        link_text = lines[10]
     bot.send_message(message.from_user.id, 'Вы добавили машину в БД')
     if marka_text == "BMW\n":
         db_table_val_car(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
         db_table_val_bmw(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
 
     elif marka_text == "Mercedes\n":
         db_table_val_car(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
         db_table_val_mercedes(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
 
     elif marka_text == "Porsche\n":
         db_table_val_car(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
         db_table_val_porsche(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
 
     elif marka_text == "Ford\n":
         db_table_val_car(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
         db_table_val_ford(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
 
     elif marka_text == "Dodge\n":
         db_table_val_car(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
         db_table_val_dodge(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
 
     elif marka_text == "Chevrolet\n":
         db_table_val_car(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
         db_table_val_chevrolet(marka=marka_text, model=model_text, year=year_text, power=power_text, liter=liter_text,
                          transmission=transmission_text, drive=drive_text, color=color_text, country=country_text,
-                         price=price_text)
+                         price=price_text, link=link_text)
 
 
 bot.polling(none_stop=True)
